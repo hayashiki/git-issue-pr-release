@@ -1,0 +1,9 @@
+name: "gipr-draft"
+description: "This action customized pr followed gitFlow"
+author: 'hayashiki'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'bell'
+  color: 'yellow'
