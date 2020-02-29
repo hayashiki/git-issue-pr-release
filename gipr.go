@@ -94,7 +94,7 @@ func Run(token, head, base string) {
 
 	body := issueBody + prBody + mergedPrBody
 	log.Printf("body is, %v", body)
-	return
+	// return
 
 	pr, err := client.CreatePullRequest(ctx, owner, repo, &github.NewPullRequest{
 		Title:               github.String(title),
