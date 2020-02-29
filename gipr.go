@@ -16,6 +16,7 @@ func Run(token, head, base string) {
 	ctx := context.Background()
 	originURL, err := git.GetRemoteOrigin(ctx)
 	// originURL = []byte("git@github.com:watashino-okyoushitsu/manatea-server.git")
+	// originURL = []byte("https://github.com/hayashiki/mkdocs-playground")
 
 	if err != nil {
 		log.Fatalf("error is %s", err)
@@ -23,7 +24,8 @@ func Run(token, head, base string) {
 	}
 	log.Printf("url is %s", originURL)
 
-	exp := regexp.MustCompile(`git@github\.com:(?P<owner>.+)/(?P<repo>.+)`)
+	exp := regexp.MustCompile(`https://github\.com/(?P<owner>.+)/(?P<repo>.+)`)
+	// exp := regexp.MustCompile(`git@github\.com:(?P<owner>.+)/(?P<repo>.+)`)
 	match := exp.FindSubmatch(originURL)
 	originNames := make(map[string]string)
 
